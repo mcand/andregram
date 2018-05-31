@@ -1,0 +1,13 @@
+%section.jumboton.text-center
+  .row.justify-content-md-center.login
+    .col
+      %h1.jumbotron-heading Instragram Test
+      %p.lead.text-muted
+        Welcome to the application.
+        %br
+        Sign in to see the photos you have shared on Instagram.
+      %div.row.justify-content-md-center
+        .col
+          = link_to Instagram.authorize_url(redirect_uri: ENV['REDIRECT_URI'], scope: "basic public_content"), class: 'btn btn-block btn-social btn-instagram btn-lg' do
+            %i.fa.fa-instagram 
+            Sign in with Instragram

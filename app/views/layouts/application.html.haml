@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Andregram
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %header
+      %nav.navbar.navbar-expand-lg.navbar-default
+        %a.navbar-brand{:href => "#"}
+          %i.fa.fa-instagram.fa-2x
+          %span
+            Andregram
+        %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
+          %span.navbar-toggler-icon
+        #navbarNavDropdown.navbar-collapse.collapse
+          %ul.navbar-nav.mr-auto
+          - if @current_user
+            %ul.navbar-nav.profile
+              %li.nav-item.dropdown
+                %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+                  .inset
+                    %img{:src => @current_user.profile_picture}/
+                .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+                  = link_to 'Signout', logout_path, class: 'dropdown-item'
+    %main.container-fluid
+      = yield
+    %footer.fixed-bottom
+      %span
+        Instagram Test 2018

@@ -1,0 +1,102 @@
+@import "colors";
+
+body {
+  background-color: #fafafa;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+main{
+  padding-top: 20px;
+  h2{
+    margin-bottom: 20px;
+  }
+}
+
+.login{
+  margin-top: 20%;
+}
+
+.navbar-brand{
+  span{
+    vertical-align: text-bottom;
+  }
+}
+
+.card{
+  margin-bottom: 20px;
+  img{
+    width: 100%;
+  }
+  .card-footer{
+    .fa-heart{
+      color: $heart;
+    }
+  }
+}
+
+
+footer{
+  text-align: center;
+  color: #999;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: $footer-background;
+}
+
+.name{
+  position: absolute;
+  right: 80px;
+  top: 15px;
+}
+
+.image{
+  width: 38px;
+}
+
+ul.profile{
+  .dropdown-menu{
+    left: -103px;
+  }
+  .dropdown-toggle::after{
+    display: none;
+  }
+}
+
+#navbarDropdownMenuLink{
+  padding-right: 0px;
+  cursor: pointer;
+}
+
+.inset {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6), 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: transparent !important;
+  z-index: 999;
+  img {
+    border-radius: inherit;
+    width: inherit;
+    height: inherit;
+    display: block;
+    position: relative;
+    z-index: 998;
+  }
+}
+
+section{
+  a.btn.btn-block.btn-social.btn-instagram{
+    color: white;
+    width: auto;
+    display: inline-block;
+  }
+}
+
+.navbar-default {
+  background-color: $white;
+  height: 54px;
+  .navbar-nav li a {
+    color: $navbar-link;
+  }
+}

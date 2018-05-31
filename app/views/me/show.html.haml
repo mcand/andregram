@@ -1,0 +1,20 @@
+%h2.text-center
+  %span.text-muted 
+    Photos by
+  = @current_user.first_name
+
+.row
+  - @client.user_recent_media.each do |m|
+    .col-lg-3.col-xs-1
+      .card.border-light
+        .card-header.text-center
+          - if m.caption.try(:text).present?
+            = m.caption.text
+          - else
+            \-
+        .card-body
+          %a{:href => m.images.standard_resolution.url}
+            %img{:src => m.images.thumbnail.url}
+        .card-footer
+          %span.fa.fa-heart.text-center.likes
+            = m.likes[:count]
