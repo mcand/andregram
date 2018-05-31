@@ -5,8 +5,12 @@ class HomeController < ApplicationController
   def callback
 	  response = Instagram.get_access_token(params[:code], redirect_uri: ENV['REDIRECT_URI'])
 	  @user = User.find_or_create_user(response)
-	  session[:user_id] = @user.id
-	  redirect_to :me
+	  if @user
+	  	session[:user_id] = @user.id
+	  	redirect_to :me
+	  else
+	  	flash[:error] = "Cannot login"
+	  end
   end
 
   def destroy
